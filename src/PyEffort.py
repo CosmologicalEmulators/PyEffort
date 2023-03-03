@@ -1,4 +1,5 @@
 from juliacall import Main as jl
+import numpy as np
 
 jl.seval("using Effort")
 jl.seval("using SimpleChains")
@@ -11,11 +12,11 @@ load_emu_jl = jl.seval('BSON.load')
 
 def compute_Pl(cosmo, bs, emu):
     Pl = effort_compute_Pl(jl.collect(cosmo), jl.collect(bs), emu)
-    return Pl
+    return np.array(Pl)
 
 def compute_Xil(cosmo, bs, emu):
-    Pl = effort_compute_Xil(jl.collect(cosmo), jl.collect(bs), emu)
-    return Pl
+    Xil = effort_compute_Xil(jl.collect(cosmo), jl.collect(bs), emu)
+    return np.array(Xil)
 
 def load_emu(path):
     loaded = load_emu_jl(path)
