@@ -10,6 +10,8 @@ effort_compute_Pl = jl.seval('Effort.get_Pℓ')
 effort_compute_Xil = jl.seval('Effort.get_Xiℓ')
 effort_compute_Xil = jl.seval('Effort.get_Xiℓ')
 effort_compute_f_z = jl.seval('Effort._f_z')
+create_bin_edges = jl.seval('Effort.create_bin_edges')
+get_stoch_terms_binned_efficient = jl.seval('Effort.get_stoch_terms_binned_efficient')
 load_emu_jl = jl.seval('BSON.load')
 
 def compute_Pl(*args):
